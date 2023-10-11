@@ -5,12 +5,15 @@ Code for [TRAM: Bridging Trust Regions and Sharpness Aware Minimization](https:/
 
 _I am working on my PhD write up at present but I plan to fully expand on this repo when I have the bandwidth_
 
-The minimal requirements are `tram.py`, `parameter_target.py` and a training loop that looks something like the snippet below. This is meant to replace the `training_step` function of the Huggingface `Trainer` class. Our version of this class will be added soon.
+The minimal requirements are `tram.py`, `parameter_target.py` and a training step that looks something like the snippet below. This is meant to replace the `training_step` function of the Huggingface `Trainer` class. Our version of this class will be added soon.
 
 The critical details are:
+
     - Define a parameter target object which specifies the other model to compare the current model for trust region measurement.
+
     - Overload the optimizer with the `TRAM` class. `TRAM` accepts a base optimizer (e.g., Adam) and runs the TRAM logic on top. Remember to adjust the LR scheduler call to attach to `optimizer.base_optimizer`.
 
+    - Define a `logit_distance` class which gives you back the KL divergence. See `kl.py`.
 
 
 
