@@ -1,10 +1,6 @@
 # TRAM: Bridging Trust Regions and Sharpness Aware Minimization
 ### Tom Sherborne, Naomi Saphra, Pradeep Dasigi, Hao Peng
 
-Code for [TRAM: Bridging Trust Regions and Sharpness Aware Minimization](https://arxiv.org/abs/2310.03646) submitted to ICLR 2024.
-
-_I am working on my PhD write up at present but I plan to fully expand on this repo when I have the bandwidth_
-
 The minimal requirements are `tram.py`, `parameter_target.py` and a training step that looks something like the snippet below. This is meant to replace the `training_step` function of the Huggingface `Trainer` class. Our version of this class will be added soon.
 
 The critical details are:
